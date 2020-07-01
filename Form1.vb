@@ -34,7 +34,11 @@ Public Class Form1
             While isCameraRunning
 
                 capture.Read(frame)
-                image = BitmapConverter.ToBitmap(frame)
+                if isCameraRunning Then
+                    image = BitmapConverter.ToBitmap(frame)
+                Else 
+                    image = Nothing
+                End If
                 If picBox.Image IsNot Nothing Then
                     picBox.Image.Dispose()
                 End If
@@ -43,19 +47,18 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnRun_Click(sender As Object, e As EventArgs) 
+    Private Sub btnRun_Click(sender As Object, e As EventArgs) Handles btnRun.Click 
         If String.Equals(btnRun.Text, "Start") Then
             BackgroundWorker1.RunWorkerAsync()
             btnRun.Text = "Stop"
             isCameraRunning = True
         ElseIf String.Equals(btnRun.Text, "Stop") Then
             isCameraRunning = False
-            capture.Release()
             BackgroundWorker1.CancelAsync()
         End If
     End Sub
 
-    Private Sub btnSnapshot_Click(sender As Object, e As EventArgs) 
+    Private Sub btnSnapshot_Click(sender As Object, e As EventArgs) Handles btnScreenshot.Click 
         If isCameraRunning Then
             Try
 
@@ -85,12 +88,14 @@ Public Class Form1
 
     Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         capture.Release()
-        btnRun.Text = "Start"
         isCameraRunning = False
+        capture.Release()
+        btnRun.Text = "Start"
+        
         picBox.Image = Nothing
     End Sub
 
-    Private Sub btnSaveScreenshot_Click(sender As Object, e As EventArgs) 
+    Private Sub btnSaveScreenshot_Click(sender As Object, e As EventArgs) Handles btnSaveScreenshot.Click 
         If pbScreenshot.Image IsNot Nothing Then
             Dim map = new Bitmap(pbScreenshot.Image)
             Dim myGuid = Guid.NewGuid()
