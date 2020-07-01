@@ -1,0 +1,15 @@
+Winforms camera test with OpenCVSharp.  Project says barcode test, but i removed the barcode related code since 
+thsi will be handled by a barcode reader.
+
+1) Clone the repo
+2) From the sln directory run either nuget restore or nuget install
+3) open solution in visual studio 
+4) clean solution then build solution
+5) run.
+
+Start button starts the camera
+
+"snapshot" button takes a picture and displays the image on the right side of the screen
+
+"save screenshot" button will save the image to your Pictures directory.
+
