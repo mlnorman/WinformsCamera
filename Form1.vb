@@ -43,7 +43,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnRun_Click(sender As Object, e As EventArgs) Handles btnRun.Click
+    Private Sub btnRun_Click(sender As Object, e As EventArgs) 
         If String.Equals(btnRun.Text, "Start") Then
             BackgroundWorker1.RunWorkerAsync()
             btnRun.Text = "Stop"
@@ -55,7 +55,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnSnapshot_Click(sender As Object, e As EventArgs) Handles btnSnapshot.Click
+    Private Sub btnSnapshot_Click(sender As Object, e As EventArgs) 
         If isCameraRunning Then
             Try
 
@@ -90,7 +90,7 @@ Public Class Form1
         picBox.Image = Nothing
     End Sub
 
-    Private Sub btnSaveScreenshot_Click(sender As Object, e As EventArgs) Handles btnSaveScreenshot.Click
+    Private Sub btnSaveScreenshot_Click(sender As Object, e As EventArgs) 
         If pbScreenshot.Image IsNot Nothing Then
             Dim map = new Bitmap(pbScreenshot.Image)
             Dim myGuid = Guid.NewGuid()

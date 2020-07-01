@@ -22,25 +22,15 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnRun = New Infragistics.Win.Misc.UltraButton()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.picBox = New System.Windows.Forms.PictureBox()
-        Me.txtBarcode = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnSnapshot = New Infragistics.Win.Misc.UltraButton()
         Me.pbScreenshot = New System.Windows.Forms.PictureBox()
-        Me.btnSaveScreenshot = New Infragistics.Win.Misc.UltraButton()
+        Me.btnRun = New System.Windows.Forms.Button()
+        Me.btnScreenshot = New System.Windows.Forms.Button()
+        Me.btnSaveScreenshot = New System.Windows.Forms.Button()
         CType(Me.picBox,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.pbScreenshot,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
-        '
-        'btnRun
-        '
-        Me.btnRun.Location = New System.Drawing.Point(230, 581)
-        Me.btnRun.Name = "btnRun"
-        Me.btnRun.Size = New System.Drawing.Size(75, 23)
-        Me.btnRun.TabIndex = 1
-        Me.btnRun.Text = "Start"
         '
         'BackgroundWorker1
         '
@@ -55,30 +45,6 @@ Partial Class Form1
         Me.picBox.TabIndex = 3
         Me.picBox.TabStop = false
         '
-        'txtBarcode
-        '
-        Me.txtBarcode.Location = New System.Drawing.Point(433, 585)
-        Me.txtBarcode.Name = "txtBarcode"
-        Me.txtBarcode.Size = New System.Drawing.Size(175, 20)
-        Me.txtBarcode.TabIndex = 5
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(380, 588)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 13)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Barcode"
-        '
-        'btnSnapshot
-        '
-        Me.btnSnapshot.Location = New System.Drawing.Point(703, 581)
-        Me.btnSnapshot.Name = "btnSnapshot"
-        Me.btnSnapshot.Size = New System.Drawing.Size(75, 23)
-        Me.btnSnapshot.TabIndex = 7
-        Me.btnSnapshot.Text = "Snapshot"
-        '
         'pbScreenshot
         '
         Me.pbScreenshot.Location = New System.Drawing.Point(599, 12)
@@ -87,13 +53,32 @@ Partial Class Form1
         Me.pbScreenshot.TabIndex = 8
         Me.pbScreenshot.TabStop = false
         '
+        'btnRun
+        '
+        Me.btnRun.Location = New System.Drawing.Point(287, 578)
+        Me.btnRun.Name = "btnRun"
+        Me.btnRun.Size = New System.Drawing.Size(75, 23)
+        Me.btnRun.TabIndex = 10
+        Me.btnRun.Text = "Start"
+        Me.btnRun.UseVisualStyleBackColor = true
+        '
+        'btnScreenshot
+        '
+        Me.btnScreenshot.Location = New System.Drawing.Point(568, 578)
+        Me.btnScreenshot.Name = "btnScreenshot"
+        Me.btnScreenshot.Size = New System.Drawing.Size(75, 23)
+        Me.btnScreenshot.TabIndex = 11
+        Me.btnScreenshot.Text = "Screenshot"
+        Me.btnScreenshot.UseVisualStyleBackColor = true
+        '
         'btnSaveScreenshot
         '
-        Me.btnSaveScreenshot.Location = New System.Drawing.Point(879, 581)
+        Me.btnSaveScreenshot.Location = New System.Drawing.Point(841, 578)
         Me.btnSaveScreenshot.Name = "btnSaveScreenshot"
-        Me.btnSaveScreenshot.Size = New System.Drawing.Size(108, 23)
-        Me.btnSaveScreenshot.TabIndex = 9
+        Me.btnSaveScreenshot.Size = New System.Drawing.Size(152, 23)
+        Me.btnSaveScreenshot.TabIndex = 12
         Me.btnSaveScreenshot.Text = "Save Screenshot"
+        Me.btnSaveScreenshot.UseVisualStyleBackColor = true
         '
         'Form1
         '
@@ -101,26 +86,21 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1191, 641)
         Me.Controls.Add(Me.btnSaveScreenshot)
-        Me.Controls.Add(Me.pbScreenshot)
-        Me.Controls.Add(Me.btnSnapshot)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtBarcode)
-        Me.Controls.Add(Me.picBox)
+        Me.Controls.Add(Me.btnScreenshot)
         Me.Controls.Add(Me.btnRun)
+        Me.Controls.Add(Me.pbScreenshot)
+        Me.Controls.Add(Me.picBox)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.picBox,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.pbScreenshot,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
-        Me.PerformLayout
 
 End Sub
-    Friend WithEvents btnRun As Infragistics.Win.Misc.UltraButton
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents picBox As PictureBox
-    Friend WithEvents txtBarcode As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btnSnapshot As Infragistics.Win.Misc.UltraButton
     Friend WithEvents pbScreenshot As PictureBox
-    Friend WithEvents btnSaveScreenshot As Infragistics.Win.Misc.UltraButton
+    Friend WithEvents btnRun As Button
+    Friend WithEvents btnScreenshot As Button
+    Friend WithEvents btnSaveScreenshot As Button
 End Class
